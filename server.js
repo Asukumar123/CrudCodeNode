@@ -5,6 +5,7 @@ const app = express();
 const db= require('./db');
 const Person=require('./models/person');
 const router = express.Router();
+require('dotenv').config();
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -18,9 +19,9 @@ app.get('/', function (req, res) {
 })
 
 
+const PORT=process.env.PORT||3000;
 
-
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log("server started");
 })
 
